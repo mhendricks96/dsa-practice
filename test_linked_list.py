@@ -1,5 +1,5 @@
 from data_structures.singly_linked_list import Node, SinglyLinkedList
-from problems.linked_list_functions import return_duplicates, find_max_recursively, merge_opposite, find_middle
+from problems.linked_list_functions import return_duplicates, find_max_recursively, merge_opposite, find_middle, find_common
 
 def test_create_node():
   my_node = Node(99)
@@ -76,6 +76,22 @@ def test_find_middle():
   my_list1.insert(7)
   my_list1.insert(6)
   my_list1.insert(2)
+  my_list1.insert(7)
   actual = find_middle(my_list1)
-  expected = 10
-  #assert actual == expected
+  expected = 7
+  assert actual == expected
+
+def test_find_common():
+  my_list1 = SinglyLinkedList()
+  my_list1.insert(2)
+  my_list1.insert(3)
+  my_list1.insert(1)
+  my_list1.insert(10)
+  my_list2 = SinglyLinkedList()
+  my_list2.insert(2)
+  my_list2.insert(9)
+  my_list2.insert(1)
+  my_list2.insert(13)
+  actual = str(find_common(my_list1, my_list2))
+  expected = "{2} -> {1} -> NONE"
+  assert actual == expected

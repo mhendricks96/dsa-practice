@@ -72,23 +72,50 @@ def merge_opposite(ll1, ll2):
   return new_ll
 
 # find the middle of a linked list using 2 pointers (fast and slow)
-
-# define a function that takes in a linked list
-# create a variable for a slow pointer
-# create a variable for fast pointer
-# create a while loop that goes until the fast pointer ends
-# every iteration the fast pointer moves 2 nodes and the slow pointer moves 1 node
-# return the value of the node the first pointer is at
+#{7, 2, 6, 7s, 10, 1, 3f, 5} returns 5
 
 def find_middle(linked):
   slow_pointer = linked.head
   fast_pointer = linked.head
 
-  while fast_pointer:
-    fast_pointer = fast_pointer.next.next
-    slow_pointer = slow_pointer.next
-  
+  while fast_pointer.next:
+    if fast_pointer.next.next:
+      fast_pointer = fast_pointer.next.next
+      slow_pointer = slow_pointer.next
+    else:
+      return slow_pointer.value
+    
   return slow_pointer.value
+
+#find similar elements from two Linked Lists given and return the result in the form of a Linked List. Assume there are no duplicates
+
+def find_common(ll1, ll2):
+  new_ll = SinglyLinkedList()
+  holding_dict = {}
+  current = ll1.head
+  current2 = ll2.head
+
+  while current:
+    if current.value in holding_dict:
+      holding_dict[current.value] += 1
+    else:
+      holding_dict[current.value] = 1
+    current = current.next
+
+  while current2:
+    if current2.value in holding_dict:
+      holding_dict[current2.value] += 1
+    else:
+      holding_dict[current2.value] = 1
+    current2 = current2.next
+  
+  for item in holding_dict:
+    if holding_dict[item] > 1:
+      new_ll.insert(item)
+  
+  return new_ll
+
+
 
   
 
