@@ -14,9 +14,6 @@ def tree_max(tree_root):
 # given 2 binary trees, return true if they are identical and false if they are not.
 
 
-# if you have reached the bottom of both trees, return false.
-#compare the values of the root of both trees, if they are identical recursively run function on each side
-
 def compare_trees(tree1, tree2):
   '''function'''
   
