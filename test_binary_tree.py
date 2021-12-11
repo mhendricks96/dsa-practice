@@ -1,4 +1,5 @@
 from data_structures.binary_tree import TreeNode
+from problems.tree_functions import tree_max, compare_trees
 
 def test_create_node():
   my_node = TreeNode(99)
@@ -24,3 +25,25 @@ def test_pre_order():
   expected = [77, 44, 33, 1, 2]
   assert actual == expected
   
+def test_find_max():
+  my_node = TreeNode(6)
+  my_node.add(4)
+  my_node.add(99)
+  my_node.add(116)
+  my_node.add(24)
+  actual = tree_max(my_node)
+  expected = 116
+  assert actual == expected
+
+def test_compare_trees():
+  my_node1 = TreeNode(6)
+  my_node1.add(4)
+  my_node1.add(99)
+  my_node1.add(116)
+  my_node1.add(24)
+  my_node2 = TreeNode(6)
+  my_node2.add(4)
+  my_node2.add(99)
+  my_node2.add(116)
+  my_node2.add(24)
+  assert compare_trees(my_node1, my_node2)
