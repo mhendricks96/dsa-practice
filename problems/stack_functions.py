@@ -20,21 +20,21 @@ def find_sum(stack):
 # if the if the next parenthesis is the same, push it onto the stack and go to the next one
 # if the next parenthesis is not the same, pop the top parenthesis from the stack and go to the next one in the string,
 
-def find_longest_parenthesis(string):
+# def find_longest_parenthesis(string):
   
-  holding_stack = Stack()
-  longest_streak = 0
-  holding_stack.push(-1)
+#   holding_stack = Stack()
+#   longest_streak = 0
+#   holding_stack.push(-1)
   
-  for letter in string:
+#   for letter in string:
 
-    if letter == '(':
-      holding_stack.push(letter)
-    else:
-      if not holding_stack.is_empty():
-        holding_stack.pop()
-      if not holding_stack.is_empty():
-        current_streak = 
+#     if letter == '(':
+#       holding_stack.push(letter)
+#     else:
+#       if not holding_stack.is_empty():
+#         holding_stack.pop()
+#       if not holding_stack.is_empty():
+#         current_streak = 
 
 
   
