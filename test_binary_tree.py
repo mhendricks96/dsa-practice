@@ -1,5 +1,5 @@
 from data_structures.binary_tree import TreeNode
-from problems.tree_functions import tree_max, compare_trees
+from problems.tree_functions import tree_max, compare_trees, check_if_sum
 
 def test_create_node():
   my_node = TreeNode(99)
@@ -47,3 +47,4 @@ def test_compare_trees():
   my_node2.add(116)
   my_node2.add(24)
   assert compare_trees(my_node1, my_node2)
+
