@@ -26,6 +26,7 @@ function max(arr) {
 }
 
 // return every item in an array that appears 3 times or more
+//uses map obeject
 
 function find_triples(arr) {
   var value_counts = new Map();
@@ -35,13 +36,14 @@ function find_triples(arr) {
       value_counts.set(arr[i], value_counts.get(arr[i]) + 1);
     }
     else {
-      value_counts.set(arr[i], 0)
+      value_counts.set(arr[i], 1)
     }
   }
   for (var [key, value] of value_counts) {
     if (value > 2){
-      final_array.push(value);
+      final_array.push(key);
     }
   }
+  console.log(value_counts)
   return final_array
 }
